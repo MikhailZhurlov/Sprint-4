@@ -6,28 +6,24 @@ import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
-import pageObjects.HomePage;
+import page.HomePage;
 
-public class HomeTestPage extends constantsQuestions {
-
+public class HomeTestPage extends ConstantsQuestions {
     WebDriver driver = new ChromeDriver();
-
-     @Before
-
+    @Before
     public void goOver(){
          driver.get(LINK_YANDEX);
          driver.findElement(By.id("rcc-confirm-button")).click();
      }
-
      @Test
-    public void testOneQuestions(){
+     public void testOneQuestions(){
          HomePage homePage = new HomePage(driver);
          homePage.waitLoadPage();
          String text = homePage.getTextOneQuestion();
          Assert.assertEquals(ONE_ANSWER, text);
      }
      @Test
-    public void testTwoQuestions(){
+     public void testTwoQuestions(){
          HomePage homePage = new HomePage(driver);
          homePage.waitLoadPage();
          String text = homePage.getTextTwoQuestion();
