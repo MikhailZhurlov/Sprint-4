@@ -9,6 +9,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import page.HomePage;
 
 public class HomeTestPage extends ConstantsQuestions {
+
     WebDriver driver = new ChromeDriver();
 
     @Before

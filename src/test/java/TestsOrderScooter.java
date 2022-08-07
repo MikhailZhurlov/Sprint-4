@@ -7,7 +7,8 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import page.OrderingPage;
 
-public class TestOrderScooter extends ConstantsQuestions {
+public class TestsOrderScooter extends ConstantsQuestions {
+
     WebDriver driver = new FirefoxDriver();
 
     @Before

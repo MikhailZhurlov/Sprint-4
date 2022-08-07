@@ -4,6 +4,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
 public class OrderingPage {
+
     WebDriver driver;
     private final By buttonOneOrder = By.className("Button_Button__ra12g");
     private final By secondButtonOrder = By.xpath("//button[contains(@class,'Button_Middle__1CSJM')]");
@@ -56,6 +57,7 @@ public class OrderingPage {
     public void setPhone(String phone) {
         driver.findElement(phoneField).sendKeys(phone);
     }
+
     public void clickNext() {
         driver.findElement(buttonNext).click();
     }
