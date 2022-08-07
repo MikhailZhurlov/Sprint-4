@@ -23,34 +23,43 @@ public class OrderingPage {
     private final By buttonOrder = By.xpath("//button[contains(@class, 'Button_Middle__1CSJM')][text() = 'Заказать']");
     private final By buttonYes = By.xpath(".//button[text() = 'Да']");
     private final By viewWindow = By.xpath("//button[text()='Посмотреть статус']");
+
     public OrderingPage(WebDriver driver) {
         this.driver = driver;
     }
+
     public void clickButtonOneOrder() {
         driver.findElement(buttonOneOrder).click();
     }
+
     public void clickSecondButtonOrder() {
         driver.findElement(secondButtonOrder).click();
     }
+
     public void setName(String name) {
         driver.findElement(nameField).sendKeys(name);
     }
+
     public void setSurname(String surname) {
         driver.findElement(surnameField).sendKeys(surname);
     }
+
     public void setAddress(String address) {
         driver.findElement(addressField).sendKeys(address);
     }
+
     public void setMetro() {
         driver.findElement(station).click();
         driver.findElement(selectMetroField).click();
     }
+
     public void setPhone(String phone) {
         driver.findElement(phoneField).sendKeys(phone);
     }
     public void clickNext() {
         driver.findElement(buttonNext).click();
     }
+
     public void login(String name, String surname, String address, String phone) {
         setName(name);
         setSurname(surname);
@@ -58,30 +67,39 @@ public class OrderingPage {
         setPhone(phone);
         clickNext();
     }
+
     public void clickDate() {
         driver.findElement(dataField).click();
     }
+
     public void clickChooseDate() {
         driver.findElement(date).click();
     }
+
     public void clickRentDate() {
         driver.findElement(rentDate).click();
     }
+
     public void clickRentElement() {
         driver.findElement(rentDateElement).click();
     }
+
     public void clickCheckbox() {
         driver.findElement(colourCheckbox).click();
     }
+
     public void Comments() {
         driver.findElement(commentField).sendKeys("Хорошая погодка");
     }
+
     public void clickOrder() {
         driver.findElement(buttonOrder).click();
     }
+
     public void clickYesButton() {
         driver.findElement(buttonYes).click();
     }
+
     public void loginRentalInfo() {
         clickDate();
         clickChooseDate();
@@ -91,6 +109,7 @@ public class OrderingPage {
         clickOrder();
         clickYesButton();
     }
+
     public String getStatusView() {
         return driver.findElement(viewWindow).getText();
     }

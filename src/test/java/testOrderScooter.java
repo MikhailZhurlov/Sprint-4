@@ -9,11 +9,13 @@ import page.OrderingPage;
 
 public class TestOrderScooter extends ConstantsQuestions {
     WebDriver driver = new FirefoxDriver();
+
     @Before
     public void goOrder() {
         driver.get(LINK_YANDEX);
         driver.findElement(By.id("rcc-confirm-button")).click();
     }
+
     @Test
     public void testButtonOneOrder() {
         OrderingPage orderingPage = new OrderingPage(driver);
@@ -25,6 +27,7 @@ public class TestOrderScooter extends ConstantsQuestions {
         String textStatus = orderingPage.getStatusView();
         Assert.assertEquals(BUTTONS_STATUS, textStatus);
     }
+
     @Test
     public void testSecondButtonOrder() {
         OrderingPage orderingPage = new OrderingPage(driver);
@@ -36,6 +39,7 @@ public class TestOrderScooter extends ConstantsQuestions {
         String textStatus = orderingPage.getStatusView();
         Assert.assertEquals(BUTTONS_STATUS, textStatus);
     }
+
     @After
     public void teardown() {
         driver.quit();
